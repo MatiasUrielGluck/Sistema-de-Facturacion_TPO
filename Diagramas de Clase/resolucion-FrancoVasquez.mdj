@@ -1080,6 +1080,7 @@
 											"model": {
 												"$ref": "AAAAAAGLcmJms1hp68c="
 											},
+											"visible": false,
 											"font": "Arial;13;0",
 											"left": 1789,
 											"top": 1182,
@@ -1117,7 +1118,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 1789,
-											"top": 1197,
+											"top": 1184,
 											"width": 276.4150390625,
 											"height": 13,
 											"text": "-impuestos: Collection<Impuesto>",
@@ -1134,7 +1135,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 1789,
-											"top": 1212,
+											"top": 1199,
 											"width": 276.4150390625,
 											"height": 13,
 											"text": "-fecha: Date",
@@ -1151,10 +1152,10 @@
 											},
 											"font": "Arial;13;0",
 											"left": 1789,
-											"top": 1227,
+											"top": 1214,
 											"width": 276.4150390625,
 											"height": 13,
-											"text": "+detalles: Collection<detalleFactura>",
+											"text": "+detalles: Collection<DetalleFactura>",
 											"horizontalAlignment": 0
 										},
 										{
@@ -1166,9 +1167,10 @@
 											"model": {
 												"$ref": "AAAAAAGLfE8r0qIE6t0="
 											},
+											"visible": false,
 											"font": "Arial;13;0",
 											"left": 1789,
-											"top": 1242,
+											"top": 1229,
 											"width": 276.4150390625,
 											"height": 13,
 											"text": "+estaPago: Boolean",
@@ -1179,7 +1181,7 @@
 									"left": 1784,
 									"top": 1177,
 									"width": 286.4150390625,
-									"height": 83
+									"height": 55
 								},
 								{
 									"_type": "UMLOperationCompartmentView",
@@ -1202,7 +1204,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 1789,
-											"top": 1265,
+											"top": 1237,
 											"width": 276.4150390625,
 											"height": 13,
 											"text": "+getOrdenDeCompraById()",
@@ -1219,7 +1221,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 1789,
-											"top": 1280,
+											"top": 1252,
 											"width": 276.4150390625,
 											"height": 13,
 											"text": "+getFecha()",
@@ -1236,7 +1238,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 1789,
-											"top": 1295,
+											"top": 1267,
 											"width": 276.4150390625,
 											"height": 13,
 											"text": "+getImpuestosRetenidos()",
@@ -1253,7 +1255,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 1789,
-											"top": 1310,
+											"top": 1282,
 											"width": 276.4150390625,
 											"height": 13,
 											"text": "+getDetallesDeFactura()",
@@ -1268,9 +1270,10 @@
 											"model": {
 												"$ref": "AAAAAAGLfE9o07Kgudk="
 											},
+											"visible": false,
 											"font": "Arial;13;0",
 											"left": 1789,
-											"top": 1325,
+											"top": 1297,
 											"width": 276.4150390625,
 											"height": 13,
 											"text": "+getEstaPago()",
@@ -1279,9 +1282,9 @@
 									],
 									"font": "Arial;13;0",
 									"left": 1784,
-									"top": 1260,
+									"top": 1232,
 									"width": 286.4150390625,
-									"height": 83
+									"height": 68
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -6752,13 +6755,30 @@
 											"height": 13,
 											"text": "+estaPago: Boolean",
 											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAGLfQTM2FyMxbc=",
+											"_parent": {
+												"$ref": "AAAAAAGLceUnE47NWWM="
+											},
+											"model": {
+												"$ref": "AAAAAAGLfQTMwFxu+mo="
+											},
+											"font": "Arial;13;0",
+											"left": 1373,
+											"top": 1460,
+											"width": 190,
+											"height": 13,
+											"text": "+monto: Float",
+											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 1368,
 									"top": 1425,
 									"width": 200,
-									"height": 38
+									"height": 53
 								},
 								{
 									"_type": "UMLOperationCompartmentView",
@@ -6781,7 +6801,7 @@
 											},
 											"font": "Arial;13;2",
 											"left": 1373,
-											"top": 1468,
+											"top": 1483,
 											"width": 190,
 											"height": 13,
 											"text": "+obtenerDocumento()",
@@ -6796,20 +6816,37 @@
 											"model": {
 												"$ref": "AAAAAAGLfE+Ia7fnPxE="
 											},
-											"font": "Arial;13;0",
+											"font": "Arial;13;2",
 											"left": 1373,
-											"top": 1483,
+											"top": 1498,
 											"width": 190,
 											"height": 13,
 											"text": "+getEstaPago()",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGLfQT9lGHT4fQ=",
+											"_parent": {
+												"$ref": "AAAAAAGLceUnFI7OfP4="
+											},
+											"model": {
+												"$ref": "AAAAAAGLfQT9iWG1gKM="
+											},
+											"font": "Arial;13;2",
+											"left": 1373,
+											"top": 1513,
+											"width": 190,
+											"height": 13,
+											"text": "+getMonto()",
 											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 1368,
-									"top": 1463,
+									"top": 1478,
 									"width": 200,
-									"height": 38
+									"height": 53
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -9619,7 +9656,7 @@
 											"top": 1039,
 											"width": 197.64697265625,
 											"height": 13,
-											"text": "detalleFactura"
+											"text": "DetalleFactura"
 										},
 										{
 											"_type": "LabelView",
@@ -9691,7 +9728,7 @@
 											"top": 1062,
 											"width": 197.64697265625,
 											"height": 13,
-											"text": "+numRenglon",
+											"text": "-numRenglon",
 											"horizontalAlignment": 0
 										},
 										{
@@ -9708,7 +9745,7 @@
 											"top": 1077,
 											"width": 197.64697265625,
 											"height": 13,
-											"text": "+producto: ProductoPorProveedor",
+											"text": "-producto: ProductoPorProveedor",
 											"horizontalAlignment": 0
 										},
 										{
@@ -9725,7 +9762,7 @@
 											"top": 1092,
 											"width": 197.64697265625,
 											"height": 13,
-											"text": "+cantidad",
+											"text": "-cantidad",
 											"horizontalAlignment": 0
 										},
 										{
@@ -9742,7 +9779,7 @@
 											"top": 1107,
 											"width": 197.64697265625,
 											"height": 13,
-											"text": "+precioFinal",
+											"text": "-precioFinal",
 											"horizontalAlignment": 0
 										}
 									],
@@ -10892,7 +10929,7 @@
 								"$ref": "AAAAAAGLbT+W509G5QU="
 							},
 							"name": "detalles",
-							"type": "Collection<detalleFactura>"
+							"type": "Collection<DetalleFactura>"
 						},
 						{
 							"_type": "UMLAttribute",
@@ -11869,6 +11906,15 @@
 							},
 							"name": "estaPago",
 							"type": "Boolean"
+						},
+						{
+							"_type": "UMLAttribute",
+							"_id": "AAAAAAGLfQTMwFxu+mo=",
+							"_parent": {
+								"$ref": "AAAAAAGLceUnE47FkTM="
+							},
+							"name": "monto",
+							"type": "Float"
 						}
 					],
 					"operations": [
@@ -11887,7 +11933,17 @@
 							"_parent": {
 								"$ref": "AAAAAAGLceUnE47FkTM="
 							},
-							"name": "getEstaPago"
+							"name": "getEstaPago",
+							"isAbstract": true
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAGLfQT9iWG1gKM=",
+							"_parent": {
+								"$ref": "AAAAAAGLceUnE47FkTM="
+							},
+							"name": "getMonto",
+							"isAbstract": true
 						}
 					],
 					"isAbstract": true
@@ -12147,7 +12203,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "detalleFactura",
+					"name": "DetalleFactura",
 					"ownedElements": [
 						{
 							"_type": "UMLAssociation",
@@ -12180,6 +12236,7 @@
 							}
 						}
 					],
+					"visibility": "private",
 					"attributes": [
 						{
 							"_type": "UMLAttribute",
@@ -12187,7 +12244,9 @@
 							"_parent": {
 								"$ref": "AAAAAAGLfE0KAk8EcJ0="
 							},
-							"name": "numRenglon"
+							"name": "numRenglon",
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -12196,6 +12255,7 @@
 								"$ref": "AAAAAAGLfE0KAk8EcJ0="
 							},
 							"name": "producto",
+							"visibility": "private",
 							"type": {
 								"$ref": "AAAAAAGLcdr6uqsBW0g="
 							}
@@ -12206,7 +12266,9 @@
 							"_parent": {
 								"$ref": "AAAAAAGLfE0KAk8EcJ0="
 							},
-							"name": "cantidad"
+							"name": "cantidad",
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -12214,7 +12276,9 @@
 							"_parent": {
 								"$ref": "AAAAAAGLfE0KAk8EcJ0="
 							},
-							"name": "precioFinal"
+							"name": "precioFinal",
+							"visibility": "private",
+							"type": ""
 						}
 					],
 					"operations": [
