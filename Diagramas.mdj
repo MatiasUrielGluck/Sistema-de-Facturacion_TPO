@@ -26064,7 +26064,7 @@
 													"top": 87,
 													"width": 101.8544921875,
 													"height": 13,
-													"text": "Lifeline1"
+													"text": "Lifeline1:Actor"
 												},
 												{
 													"_type": "LabelView",
@@ -26181,7 +26181,7 @@
 													"top": 47,
 													"width": 181.18359375,
 													"height": 13,
-													"text": "Lifeline2"
+													"text": "Lifeline2:ControllerGestion"
 												},
 												{
 													"_type": "LabelView",
@@ -26509,7 +26509,7 @@
 													"top": 47,
 													"width": 157.36083984375,
 													"height": 13,
-													"text": "Lifeline3"
+													"text": "Lifeline3:OrdenDePago"
 												},
 												{
 													"_type": "LabelView",
@@ -27488,7 +27488,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGLhz767AUreIk="
 							},
-							"name": "Lifeline1",
+							"name": "Lifeline1:Actor",
 							"isMultiInstance": false
 						},
 						{
@@ -27497,7 +27497,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGLhz767AUreIk="
 							},
-							"name": "Lifeline2",
+							"name": "Lifeline2:ControllerGestion",
 							"isMultiInstance": false
 						},
 						{
@@ -27506,7 +27506,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGLhz767AUreIk="
 							},
-							"name": "Lifeline3",
+							"name": "Lifeline3:OrdenDePago",
 							"isMultiInstance": false
 						}
 					],
@@ -27648,7 +27648,7 @@
 													"top": 87,
 													"width": 101.8544921875,
 													"height": 13,
-													"text": "Lifeline1"
+													"text": "Lifeline1:Actor"
 												},
 												{
 													"_type": "LabelView",
@@ -27751,7 +27751,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"left": -128,
+													"left": -144,
 													"height": 13
 												},
 												{
@@ -27761,11 +27761,11 @@
 														"$ref": "AAAAAAGLhz+GCQyV9ng="
 													},
 													"font": "Arial;13;1",
-													"left": 181,
+													"left": 173,
 													"top": 47,
 													"width": 181.18359375,
 													"height": 13,
-													"text": "Lifeline2"
+													"text": "Lifeline2:ControllerGestion"
 												},
 												{
 													"_type": "LabelView",
@@ -27775,7 +27775,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"left": -128,
+													"left": -144,
 													"width": 106.20263671875,
 													"height": 13,
 													"text": "(from Interaction3)"
@@ -27788,13 +27788,13 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"left": -128,
+													"left": -144,
 													"height": 13,
 													"horizontalAlignment": 1
 												}
 											],
 											"font": "Arial;13;0",
-											"left": 176,
+											"left": 168,
 											"top": 40,
 											"width": 191.18359375,
 											"height": 40,
@@ -27821,14 +27821,14 @@
 												"$ref": "AAAAAAGLhz+GCgzhd3s="
 											},
 											"font": "Arial;13;0",
-											"left": 272,
+											"left": 264,
 											"top": 80,
 											"width": 1,
 											"height": 271
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 176,
+									"left": 168,
 									"top": 40,
 									"width": 191.18359375,
 									"height": 311,
@@ -27881,7 +27881,7 @@
 													"top": 47,
 													"width": 117.63720703125,
 													"height": 13,
-													"text": "Lifeline3"
+													"text": "Lifeline3:Factura"
 												},
 												{
 													"_type": "LabelView",
@@ -27975,7 +27975,7 @@
 												"$ref": "AAAAAAGLhz+GCgzYEWA="
 											},
 											"font": "Arial;13;0",
-											"left": 82,
+											"left": 78,
 											"top": 121,
 											"width": 180.6669921875,
 											"height": 13,
@@ -27998,7 +27998,7 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 172,
+											"left": 168,
 											"top": 106,
 											"height": 13,
 											"alpha": 1.5707963267948966,
@@ -28019,7 +28019,7 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 172,
+											"left": 168,
 											"top": 141,
 											"height": 13,
 											"alpha": -1.5707963267948966,
@@ -28039,7 +28039,7 @@
 												"$ref": "AAAAAAGLhz+GCgzYEWA="
 											},
 											"font": "Arial;13;0",
-											"left": 265,
+											"left": 257,
 											"top": 137,
 											"width": 14,
 											"height": 192
@@ -28052,7 +28052,7 @@
 									"tail": {
 										"$ref": "AAAAAAGLhz+GCQyTzoo="
 									},
-									"points": "80:137;265:137",
+									"points": "80:137;257:137",
 									"nameLabel": {
 										"$ref": "AAAAAAGLhz+GCQyj6hM="
 									},
@@ -28086,7 +28086,7 @@
 												"$ref": "AAAAAAGLhz+GCgzZLtU="
 											},
 											"font": "Arial;13;0",
-											"left": 310,
+											"left": 306,
 											"top": 136,
 											"width": 154.64794921875,
 											"height": 13,
@@ -28109,7 +28109,7 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 387,
+											"left": 383,
 											"top": 121,
 											"height": 13,
 											"alpha": 1.5707963267948966,
@@ -28130,7 +28130,7 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 387,
+											"left": 383,
 											"top": 156,
 											"height": 13,
 											"alpha": -1.5707963267948966,
@@ -28163,7 +28163,7 @@
 									"tail": {
 										"$ref": "AAAAAAGLhz+GCQyaFV8="
 									},
-									"points": "278:152;497:152",
+									"points": "270:152;497:152",
 									"nameLabel": {
 										"$ref": "AAAAAAGLhz+GCgyoxlo="
 									},
@@ -28542,7 +28542,7 @@
 													"top": 47,
 													"width": 135.68994140625,
 													"height": 13,
-													"text": "Lifeline4"
+													"text": "Lifeline4:Impuesto"
 												},
 												{
 													"_type": "LabelView",
@@ -28859,7 +28859,7 @@
 												"$ref": "AAAAAAGLhz+GCgzeeSE="
 											},
 											"font": "Arial;13;0",
-											"left": 348,
+											"left": 344,
 											"top": 308,
 											"width": 77.314453125,
 											"height": 13,
@@ -28882,7 +28882,7 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 386,
+											"left": 382,
 											"top": 323,
 											"height": 13,
 											"alpha": 1.5707963267948966,
@@ -28903,7 +28903,7 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 387,
+											"left": 383,
 											"top": 288,
 											"height": 13,
 											"alpha": -1.5707963267948966,
@@ -28924,7 +28924,7 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 265,
+											"left": 257,
 											"top": 304,
 											"width": 14,
 											"height": 25
@@ -28937,7 +28937,7 @@
 									"tail": {
 										"$ref": "AAAAAAGLhz+GCQyhu1M="
 									},
-									"points": "497:304;278:304",
+									"points": "497:304;270:304",
 									"nameLabel": {
 										"$ref": "AAAAAAGLhz+GCgzOS8Y="
 									},
@@ -28971,7 +28971,7 @@
 												"$ref": "AAAAAAGLhz+GCgzf1Hs="
 											},
 											"font": "Arial;13;0",
-											"left": 104,
+											"left": 100,
 											"top": 324,
 											"width": 135.8525390625,
 											"height": 13,
@@ -28994,7 +28994,7 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 171,
+											"left": 167,
 											"top": 339,
 											"height": 13,
 											"alpha": 1.5707963267948966,
@@ -29015,7 +29015,7 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 172,
+											"left": 168,
 											"top": 304,
 											"height": 13,
 											"alpha": -1.5707963267948966,
@@ -29049,7 +29049,7 @@
 									"tail": {
 										"$ref": "AAAAAAGLhz+GCQyaFV8="
 									},
-									"points": "265:320;80:320",
+									"points": "257:320;80:320",
 									"nameLabel": {
 										"$ref": "AAAAAAGLhz+GCgzTwzk="
 									},
@@ -29204,7 +29204,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGLhz+GCQyIn1U="
 							},
-							"name": "Lifeline1",
+							"name": "Lifeline1:Actor",
 							"isMultiInstance": false
 						},
 						{
@@ -29213,7 +29213,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGLhz+GCQyIn1U="
 							},
-							"name": "Lifeline2",
+							"name": "Lifeline2:ControllerGestion",
 							"isMultiInstance": false
 						},
 						{
@@ -29222,7 +29222,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGLhz+GCQyIn1U="
 							},
-							"name": "Lifeline3",
+							"name": "Lifeline3:Factura",
 							"isMultiInstance": false
 						},
 						{
@@ -29231,7 +29231,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGLhz+GCQyIn1U="
 							},
-							"name": "Lifeline4",
+							"name": "Lifeline4:Impuesto",
 							"isMultiInstance": false
 						}
 					],
