@@ -1,3 +1,4 @@
+package objects;
 
 enum TipoImpuesto{
     IVA, IBB, GANANCIAS

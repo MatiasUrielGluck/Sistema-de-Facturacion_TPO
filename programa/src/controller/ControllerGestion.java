@@ -1,10 +1,8 @@
-package controller.gestion;
+package controller;
 
 public class ControllerGestion {
 
-
-
-
+    
     //metodos del controlador
 
     public void facturasPorDiaProveedor(){};

@@ -1,3 +1,5 @@
+package objects;
+
 public class ProductoPorProveedor {
     private double ultimoPrecio;
     private Producto producto;

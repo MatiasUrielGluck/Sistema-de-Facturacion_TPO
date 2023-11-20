@@ -1,3 +1,5 @@
+package objects;
+
 public class ChequePropio extends Cheque{
     @Override
     public int getCuit() {

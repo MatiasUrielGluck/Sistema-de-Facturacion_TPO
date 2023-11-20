@@ -1,3 +1,5 @@
+package objects;
+
 public class LineaOrden {
     private int numeroRenglon;
     private int cantidad;

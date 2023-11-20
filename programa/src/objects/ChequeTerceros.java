@@ -1,3 +1,5 @@
+package objects;
+
 public class ChequeTerceros extends Cheque{
     private String empresaEmisora;
 

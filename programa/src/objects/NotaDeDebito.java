@@ -1,3 +1,5 @@
+package objects;
+
 public class NotaDeDebito extends Documento{
     @Override
     public int getCuit() {

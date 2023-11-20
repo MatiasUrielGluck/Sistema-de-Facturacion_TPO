@@ -1,3 +1,5 @@
+package objects;
+
 abstract class Documento {
     private int id;
     private int cuit;
