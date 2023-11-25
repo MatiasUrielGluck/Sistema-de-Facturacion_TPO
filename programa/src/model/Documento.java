@@ -1,8 +1,9 @@
+package model;
 abstract class Documento {
-    private int id;
-    private int cuit;
-    private Boolean estaPago;
-    private double monto;
+    int id;
+    int cuit;
+    Boolean estaPago;
+    double monto;
 
 
     public int getCuit() {

@@ -1,3 +1,4 @@
+package model;
 public class ChequeTerceros extends Cheque{
     private String empresaEmisora;
 

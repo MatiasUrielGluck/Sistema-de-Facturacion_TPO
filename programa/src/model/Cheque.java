@@ -1,3 +1,5 @@
+package model;
+
 import java.util.Date;
 
 abstract class Cheque extends Documento{

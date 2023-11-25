@@ -1,0 +1,44 @@
+[
+  {
+    "idProducto": 1,
+    "nombreProducto": "Traslado menos 15km",
+    "rubro": "VIATICOS_MOVILIDAD",
+    "tipoUnidad": "UNIDAD",
+    "tipoIva": ""
+  },
+  {
+    "idProducto": 2,
+    "nombreProducto": "Traslado mas 15km",
+    "rubro": "VIATICOS_MOVILIDAD",
+    "tipoUnidad": "UNIDAD",
+    "tipoIva": ""
+  },
+  {
+    "idProducto": 3,
+    "nombreProducto": "Reparacion mueble madera chico",
+    "rubro": "MANTENIMINETO_MUEBLES",
+    "tipoUnidad": "UNIDAD",
+    "tipoIva": ""
+  },
+  {
+    "idProducto": 4,
+    "nombreProducto": "Reparacion mueble madera mediano",
+    "rubro": "MANTENIMINETO_MUEBLES",
+    "tipoUnidad": "UNIDAD",
+    "tipoIva": ""
+  },
+  {
+    "idProducto": 5,
+    "nombreProducto": "Vasos descartables",
+    "rubro": "PAPELERIA_IMPRESIONES",
+    "tipoUnidad": "UNIDAD",
+    "tipoIva": ""
+  },
+  {
+    "idProducto": 6,
+    "nombreProducto": "Cajas papel",
+    "rubro": "PAPELERIA_IMPRESIONES",
+    "tipoUnidad": "UNIDAD",
+    "tipoIva": ""
+  }
+]

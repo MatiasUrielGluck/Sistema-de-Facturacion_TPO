@@ -1,7 +1,11 @@
+package model;
 public class ProductoPorProveedor {
     private double ultimoPrecio;
     private Producto producto;
-    private Proveedor proveedor;
+    public ProductoPorProveedor(double ultimoPrecio, Producto producto) {
+        this.ultimoPrecio = ultimoPrecio;
+        this.producto =producto;
+    }
 
     public double getUltimoPrecio() {
         return ultimoPrecio;
@@ -11,7 +15,4 @@ public class ProductoPorProveedor {
         return producto;
     }
 
-    public Proveedor getProveedor() {
-        return proveedor;
-    }
 }

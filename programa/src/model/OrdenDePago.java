@@ -1,3 +1,4 @@
+package model;
 
 enum FormaPago{
     EFECTIVO, CHEQUE

@@ -1,4 +1,8 @@
+package model;
+
+import java.beans.ConstructorProperties;
 import java.util.Date;
+import edu.Impuesto;
 
 public class Certificado {
     private Date fechaInicio;
@@ -6,7 +10,7 @@ public class Certificado {
     private Impuesto impuesto;
     private Proveedor proveedor;
 
-    public Impuesto getImpuestoById() {
+    public Impuesto getImpuestoById(Impuesto impuesto) {
         return impuesto;
     }
 

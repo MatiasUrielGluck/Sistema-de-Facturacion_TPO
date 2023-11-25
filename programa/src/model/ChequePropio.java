@@ -1,8 +1,10 @@
-public class NotaDeDebito extends Documento{
+package model;
+public class ChequePropio extends Cheque{
     @Override
     public int getCuit() {
         return super.getCuit();
     }
+
     @Override
     public Boolean getEstaPago() {
         return super.getEstaPago();
@@ -12,4 +14,5 @@ public class NotaDeDebito extends Documento{
     public double getMonto() {
         return super.getMonto();
     }
+
 }

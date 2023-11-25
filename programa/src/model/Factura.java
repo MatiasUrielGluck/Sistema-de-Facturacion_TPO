@@ -1,5 +1,8 @@
+package model;
+
 import java.util.Collection;
 import java.util.Date;
+import edu.Impuesto;
 
 public class Factura extends Documento {
     private Collection<Impuesto> impuestos;

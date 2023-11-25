@@ -1,3 +1,5 @@
+package model;
+
 import java.util.Date;
 
 enum TipoResponsabilidad{
@@ -14,6 +16,8 @@ public class Proveedor {
     private String mail;
     private double ingresosBrutos;
     private Date fechaInicioActividades;
+
+    private ProductoPorProveedor productoPorProveedor;
 
 
     public String getCuit() {

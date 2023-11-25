@@ -1,3 +1,4 @@
+package model;
 public class DetalleFactura {
     private int numeroRenglon;
     private ProductoPorProveedor producto;
