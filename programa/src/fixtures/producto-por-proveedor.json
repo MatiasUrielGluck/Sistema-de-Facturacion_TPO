@@ -1,62 +1,279 @@
 [
   {
+    "idProductoPorProveedor": 1,
     "ultimoPrecio": 5500,
     "producto": {
       "idProducto": 1,
       "nombreProducto": "Traslado menos 15km",
       "rubro": "VIATICOS_MOVILIDAD",
       "tipoUnidad": "UNIDAD",
-      "tipoIva": ""
+      "tipoIva": 0.105
     }
   },
+
   {
+    "idProductoPorProveedor": 2,
+    "ultimoPrecio": 4500,
+    "producto": {
+      "idProducto": 1,
+      "nombreProducto": "Traslado menos 15km",
+      "rubro": "VIATICOS_MOVILIDAD",
+      "tipoUnidad": "UNIDAD",
+      "tipoIva": 0.105
+    }
+  },
+
+  {
+    "idProductoPorProveedor": 3,
     "ultimoPrecio": 10500,
     "producto":{
       "idProducto": 2,
       "nombreProducto": "Traslado mas 15km",
       "rubro": "VIATICOS_MOVILIDAD",
       "tipoUnidad": "UNIDAD",
-      "tipoIva": ""
+      "tipoIva": 0.05
     }
   },
+
   {
+    "idProductoPorProveedor": 4,
+    "ultimoPrecio": 8500,
+    "producto":{
+      "idProducto": 2,
+      "nombreProducto": "Traslado mas 15km",
+      "rubro": "VIATICOS_MOVILIDAD",
+      "tipoUnidad": "UNIDAD",
+      "tipoIva": 0.05
+    }
+  },
+
+  {
+    "idProductoPorProveedor": 5,
     "ultimoPrecio": 4500,
     "producto": {
       "idProducto": 3,
       "nombreProducto": "Reparacion mueble madera chico",
       "rubro": "MANTENIMINETO_MUEBLES",
       "tipoUnidad": "UNIDAD",
-      "tipoIva": ""
+      "tipoIva": 0.27
     }
   },
   {
+    "idProductoPorProveedor": 6,
+    "ultimoPrecio": 7500,
+    "producto": {
+      "idProducto": 3,
+      "nombreProducto": "Reparacion mueble madera chico",
+      "rubro": "MANTENIMINETO_MUEBLES",
+      "tipoUnidad": "UNIDAD",
+      "tipoIva": 0.27
+    }
+  },
+
+  {
+    "idProductoPorProveedor": 7,
     "ultimoPrecio": 6500,
     "producto": {
       "idProducto": 4,
       "nombreProducto": "Reparacion mueble madera mediano",
       "rubro": "MANTENIMINETO_MUEBLES",
       "tipoUnidad": "UNIDAD",
-      "tipoIva": ""
+      "tipoIva": 0.21
     }
   },
   {
+    "idProductoPorProveedor": 8,
+    "ultimoPrecio": 6000,
+    "producto": {
+      "idProducto": 4,
+      "nombreProducto": "Reparacion mueble madera mediano",
+      "rubro": "MANTENIMINETO_MUEBLES",
+      "tipoUnidad": "UNIDAD",
+      "tipoIva": 0.21
+    }
+  },
+
+  {
+    "idProductoPorProveedor": 9,
     "ultimoPrecio": 1000,
     "producto": {
       "idProducto": 5,
       "nombreProducto": "Vasos descartables",
       "rubro": "PAPELERIA_IMPRESIONES",
       "tipoUnidad": "UNIDAD",
-      "tipoIva": ""
+      "tipoIva": 0.105
     }
   },
   {
+    "idProductoPorProveedor": 10,
+    "ultimoPrecio": 4000,
+    "producto": {
+      "idProducto": 5,
+      "nombreProducto": "Vasos descartables",
+      "rubro": "PAPELERIA_IMPRESIONES",
+      "tipoUnidad": "UNIDAD",
+      "tipoIva": 0.105
+    }
+  },
+
+  {
+    "idProductoPorProveedor": 11,
     "ultimoPrecio": 7100,
     "producto": {
       "idProducto": 6,
       "nombreProducto": "Cajas papel",
       "rubro": "PAPELERIA_IMPRESIONES",
       "tipoUnidad": "UNIDAD",
-      "tipoIva": ""
+      "tipoIva":  0.27
+    }
+  },
+  {
+    "idProductoPorProveedor": 12,
+    "ultimoPrecio": 5500,
+    "producto": {
+      "idProducto": 6,
+      "nombreProducto": "Cajas papel",
+      "rubro": "PAPELERIA_IMPRESIONES",
+      "tipoUnidad": "UNIDAD",
+      "tipoIva":  0.27
+    }
+  },
+
+  {
+    "idProductoPorProveedor": 13,
+    "ultimoPrecio": 1000,
+    "producto": {
+      "idProducto": 7,
+      "nombreProducto": "Paracetamol",
+      "rubro": "MEDICINA_PREPAGA",
+      "tipoUnidad": "UNIDAD",
+      "tipoIva": 0.025
+    }
+  },
+  {
+    "idProductoPorProveedor": 14,
+    "ultimoPrecio": 1500,
+    "producto": {
+      "idProducto": 7,
+      "nombreProducto": "Paracetamol",
+      "rubro": "MEDICINA_PREPAGA",
+      "tipoUnidad": "UNIDAD",
+      "tipoIva": 0.025
+    }
+  },
+
+  {
+    "idProductoPorProveedor": 15,
+    "ultimoPrecio": 3500,
+    "producto": {
+      "idProducto": 8,
+      "nombreProducto": "Ibuprofeno",
+      "rubro": "MEDICINA_PREPAGA",
+      "tipoUnidad": "UNIDAD",
+      "tipoIva": 0.025
+    }
+  },
+  {
+    "idProductoPorProveedor": 16,
+    "ultimoPrecio": 3800,
+    "producto": {
+      "idProducto": 8,
+      "nombreProducto": "Ibuprofeno",
+      "rubro": "MEDICINA_PREPAGA",
+      "tipoUnidad": "UNIDAD",
+      "tipoIva": 0.025
+    }
+  },
+
+  {
+    "idProductoPorProveedor": 17,
+    "ultimoPrecio": 50000,
+    "producto": {
+      "idProducto": 9,
+      "nombreProducto": "Televisor 32 pulgadas",
+      "rubro": "PRODUCTOS_REVENTA",
+      "tipoUnidad": "UNIDAD",
+      "tipoIva": 0.21
+    }
+  },
+  {
+    "idProductoPorProveedor": 18,
+    "ultimoPrecio": 59000,
+    "producto": {
+      "idProducto": 9,
+      "nombreProducto": "Televisor 32 pulgadas",
+      "rubro": "PRODUCTOS_REVENTA",
+      "tipoUnidad": "UNIDAD",
+      "tipoIva": 0.21
+    }
+  },
+
+  {
+    "idProductoPorProveedor": 19,
+    "ultimoPrecio": 100000,
+    "producto": {
+      "idProducto": 10,
+      "nombreProducto": "Televisor 42 pulgadas",
+      "rubro": "PRODUCTOS_REVENTA",
+      "tipoUnidad": "UNIDAD",
+      "tipoIva": 0.21
+    }
+  },
+  {
+    "idProductoPorProveedor": 20,
+    "ultimoPrecio": 120000,
+    "producto": {
+      "idProducto": 10,
+      "nombreProducto": "Televisor 42 pulgadas",
+      "rubro": "PRODUCTOS_REVENTA",
+      "tipoUnidad": "UNIDAD",
+      "tipoIva": 0.21
+    }
+  },
+
+  {
+    "idProductoPorProveedor": 21,
+    "ultimoPrecio": 5000,
+    "producto": {
+      "idProducto": 11,
+      "nombreProducto": "Cuadernillos universitarios",
+      "rubro": "LIBRERIA",
+      "tipoUnidad": "UNIDAD",
+      "tipoIva": 0.21
+    }
+  },
+  {
+    "idProductoPorProveedor": 22,
+    "ultimoPrecio": 6000,
+    "producto": {
+      "idProducto": 11,
+      "nombreProducto": "Cuadernillos universitarios",
+      "rubro": "LIBRERIA",
+      "tipoUnidad": "UNIDAD",
+      "tipoIva": 0.21
+    }
+  },
+
+  {
+    "idProductoPorProveedor": 23,
+    "ultimoPrecio": 10000,
+    "producto": {
+      "idProducto": 12,
+      "nombreProducto": "Cuadernillos escolares",
+      "rubro": "LIBRERIA",
+      "tipoUnidad": "UNIDAD",
+      "tipoIva": 0.21
+    }
+  },
+  {
+    "idProductoPorProveedor": 24,
+    "ultimoPrecio": 8000,
+    "producto": {
+      "idProducto": 12,
+      "nombreProducto": "Cuadernillos escolares",
+      "rubro": "LIBRERIA",
+      "tipoUnidad": "UNIDAD",
+      "tipoIva": 0.21
     }
   }
 ]
