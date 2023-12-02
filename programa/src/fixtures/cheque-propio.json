@@ -1,6 +1,62 @@
-{
-  "fechaEmision": "2023-10-11",
-  "fechaVencimiento": "2023-12-26",
-  "firmante": "Juan Perez",
-  "importe": 1204.0
-}
+[
+  {
+    "fechaEmision": "2023-10-11",
+    "fechaVencimiento": "2023-12-26",
+    "firmante": "Juan Perez",
+    "importe": 1204.0
+  },
+  {
+    "fechaEmision": "2023-05-15",
+    "fechaVencimiento": "2023-07-30",
+    "firmante": "Ana García",
+    "importe": 850.0
+  },
+  {
+    "fechaEmision": "2023-08-20",
+    "fechaVencimiento": "2023-10-05",
+    "firmante": "Carlos Rodríguez",
+    "importe": 1250.0
+  },
+  {
+    "fechaEmision": "2023-04-10",
+    "fechaVencimiento": "2023-06-25",
+    "firmante": "Laura Martínez",
+    "importe": 500.0
+  },
+  {
+    "fechaEmision": "2023-09-05",
+    "fechaVencimiento": "2023-11-20",
+    "firmante": "Pedro Sánchez",
+    "importe": 2000.0
+  },
+  {
+    "fechaEmision": "2023-10-11",
+    "fechaVencimiento": "2023-12-26",
+    "firmante": "Juan Perez",
+    "importe": 1204.0
+  },
+  {
+    "fechaEmision": "2023-02-18",
+    "fechaVencimiento": "2023-04-05",
+    "firmante": "María López",
+    "importe": 300.0
+  },
+  {
+    "fechaEmision": "2023-11-30",
+    "fechaVencimiento": "2024-01-15",
+    "firmante": "Javier Fernández",
+    "importe": 1800.0
+  },
+  {
+    "fechaEmision": "2023-06-08",
+    "fechaVencimiento": "2023-08-23",
+    "firmante": "Sofía Ramírez",
+    "importe": 750.0
+  },
+  {
+    "fechaEmision": "2023-03-25",
+    "fechaVencimiento": "2023-06-09",
+    "firmante": "Diego Gutiérrez",
+    "importe": 950.0
+  }
+]

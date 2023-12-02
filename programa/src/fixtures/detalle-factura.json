@@ -1,6 +1,20 @@
-{
-  "numeroRenglon": 1,
-  "producto": "",
-  "cantidad": 1,
-  "precioFinal": 2.5
-}
+[
+  {
+    "numeroRenglon": 1,
+    "producto": "Producto A",
+    "cantidad": 2,
+    "precioFinal": 15.99
+  },
+  {
+    "numeroRenglon": 2,
+    "producto": "Producto B",
+    "cantidad": 1,
+    "precioFinal": 29.99
+  },
+  {
+    "numeroRenglon": 1,
+    "producto": "Servicio de Consultoría X",
+    "cantidad": 1,
+    "precioFinal": 150.0
+  }
+]
