@@ -1,10 +1,8 @@
 package model;
 
-import java.util.Date;
+import enums.TipoResponsabilidad;
 
-enum TipoResponsabilidad{
-    RESPONSABLE_INSCRIPTO, MONOTRIBUTO
-}
+import java.util.Date;
 
 public class Proveedor {
     private String cuit;
