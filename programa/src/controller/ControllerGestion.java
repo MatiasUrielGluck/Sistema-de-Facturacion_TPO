@@ -3,6 +3,7 @@ package controller;
 import dao.FacturaDAO;
 import dao.OrdenDeCompraDAO;
 import dao.ProveedorDAO;
+import edu.Impuesto;
 import model.Factura;
 import model.LineaOrden;
 import model.OrdenDeCompra;
@@ -80,7 +81,19 @@ public class ControllerGestion {
 
     public void obtenerDeudaPorProveedor(){};
 
-    public void obtenerImpuestosRetenidos(){};
+    public double obtenerImpuestosRetenidos(int cuit) {
+        List<Factura> facturas = this.facturaDAO.getAll(Factura.class);
+        double impuestosRetenidos = 0;
+        for (Factura factura: facturas) {
+            if (factura.getCuit() != cuit) continue;
+            
+            Collection<Impuesto> impuestos = factura.getImpuestos();
+            for (Impuesto impuesto: impuestos) {
+                impuestosRetenidos += factura.getMonto() * impuesto.getPercentage();
+            }
+        }
+        return impuestosRetenidos;
+    };
 
     public void consultaLibroIva(){};
 
