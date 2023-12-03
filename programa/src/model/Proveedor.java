@@ -7,7 +7,7 @@ enum TipoResponsabilidad{
 }
 
 public class Proveedor {
-    private String cuit;
+    private int cuit;
     private TipoResponsabilidad responsabilidad;
     private String razonSocial;
     private String nombre;
@@ -20,7 +20,7 @@ public class Proveedor {
     private ProductoPorProveedor productoPorProveedor;
 
 
-    public String getCuit() {
+    public int getCuit() {
         return cuit;
     }
 
