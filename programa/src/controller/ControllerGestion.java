@@ -1,14 +1,9 @@
 package controller;
 
-import dao.FacturaDAO;
-import dao.OrdenDeCompraDAO;
-import dao.ProveedorDAO;
+import dao.*;
 import edu.Impuesto;
-import model.Factura;
-import model.LineaOrden;
-import model.OrdenDeCompra;
+import model.*;
 import dto.CuentaCorrienteDTO;
-import model.Proveedor;
 
 import java.io.File;
 import java.util.Collection;
@@ -20,6 +15,10 @@ public class ControllerGestion {
     private static ControllerGestion INSTANCE = null;
 
     private static FacturaDAO facturaDAO;
+    private static NotaDeCreditoDAO notaDeCreditoDAO;
+    private static NotaDeDebitoDAO notaDeDebitoDAO;
+    private static ChequePropioDAO chequePropioDAO;
+    private static ChequeTerceroDAO chequeTerceroDAO;
     private static OrdenDeCompraDAO ordenDeCompraDAO;
     private static ProveedorDAO proveedorDAO;
 
@@ -29,10 +28,14 @@ public class ControllerGestion {
         ControllerGestion.ordenDeCompraDAO = ordenDeCompraDAO;
     }
 
-    private ControllerGestion(FacturaDAO facturaDAO, ProveedorDAO proveedorDAO, OrdenDeCompraDAO ordenDeCompraDAO) {
+    private ControllerGestion(FacturaDAO facturaDAO, ProveedorDAO proveedorDAO, OrdenDeCompraDAO ordenDeCompraDAO, NotaDeCreditoDAO notaDeCreditoDAO, NotaDeDebitoDAO notaDeDebitoDAO, ChequePropioDAO chequePropioDAO, ChequeTerceroDAO chequeTerceroDAO) {
         this.facturaDAO = facturaDAO;
         this.proveedorDAO = proveedorDAO;
         this.ordenDeCompraDAO = ordenDeCompraDAO;
+        this.notaDeCreditoDAO = notaDeCreditoDAO;
+        this.notaDeDebitoDAO = notaDeDebitoDAO;
+        this.chequePropioDAO = chequePropioDAO;
+        this.chequeTerceroDAO = chequeTerceroDAO;
     }
 
     public double facturasPorDiaProveedor(int idProvedor, Date fecha){
@@ -51,7 +54,11 @@ public class ControllerGestion {
             FacturaDAO FacturaDAO = new FacturaDAO(Factura.class, getPathOutModel(Factura.class.getSimpleName()));
             ProveedorDAO ProveedorDAO = new ProveedorDAO(Proveedor.class, getPathOutModel(Proveedor.class.getSimpleName()));
             OrdenDeCompraDAO OrdenDeCompraDAO = new OrdenDeCompraDAO(OrdenDeCompra.class, getPathOutModel(OrdenDeCompra.class.getSimpleName()));
-            INSTANCE = new ControllerGestion(FacturaDAO, ProveedorDAO, OrdenDeCompraDAO);
+            NotaDeCreditoDAO NotaDeCreditoDAO = new NotaDeCreditoDAO(NotaDeCredito.class, getPathOutModel(NotaDeCredito.class.getSimpleName()));
+            NotaDeDebitoDAO NotaDeDebitoDAO = new NotaDeDebitoDAO(NotaDeDebito.class, getPathOutModel(NotaDeDebito.class.getSimpleName()));
+            ChequeTerceroDAO ChequeTerceroDAO = new ChequeTerceroDAO(ChequeTerceros.class, getPathOutModel(ChequeTerceros.class.getSimpleName()));
+            ChequePropioDAO ChequePropioDAO = new ChequePropioDAO(ChequePropio.class, getPathOutModel(ChequePropio.class.getSimpleName()));
+            INSTANCE = new ControllerGestion(FacturaDAO, ProveedorDAO, OrdenDeCompraDAO, NotaDeCreditoDAO, notaDeDebitoDAO, chequePropioDAO, chequeTerceroDAO);
         }
         return INSTANCE;
     }
@@ -79,7 +86,15 @@ public class ControllerGestion {
 
     public void totalDeudaPorProveedor(){};
 
-    public void obtenerDeudaPorProveedor(){};
+    public double obtenerDeudaPorProveedor(int cuit) {
+        List<Factura> facturas = this.facturaDAO.getAll(Factura.class);
+        List<NotaDeCredito> notasDeCredito = this.notaDeCreditoDAO.getAll(NotaDeCredito.class);
+        List<NotaDeDebito> notasDeDebito = this.notaDeDebitoDAO.getAll(NotaDeDebito.class);
+        List<ChequePropio> chequesPropio = this.chequePropioDAO.getAll(ChequePropio.class);
+        List<ChequeTerceros> chequesTerceros = this.chequeTerceroDAO.getAll(ChequeTerceros.class);
+
+        return proveedorDAO.search(cuit).getDocumentosDeudaProveedor(facturas, notasDeCredito, notasDeDebito, chequesPropio, chequesTerceros);
+    };
 
     public double obtenerImpuestosRetenidos(int cuit) {
         List<Factura> facturas = this.facturaDAO.getAll(Factura.class);
