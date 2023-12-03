@@ -17,7 +17,7 @@ public class ChequeTerceros extends Cheque{
     }
 
     @Override
-    public int getCuit() {
+    public String getCuit() {
         return super.getCuit();
     }
 }

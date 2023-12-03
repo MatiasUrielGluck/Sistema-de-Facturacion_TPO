@@ -1,11 +1,11 @@
 package controller;
 
+import dao.NotaDeCreditoDAO;
+import dao.NotaDeDebitoDAO;
 import dao.OrdenDeCompraDAO;
 import dao.ProveedorDAO;
-import model.LineaOrden;
-import model.OrdenDeCompra;
+import model.*;
 import dto.CuentaCorrienteDTO;
-import model.Proveedor;
 
 import java.io.File;
 import java.util.Collection;
@@ -15,50 +15,47 @@ public class ControllerGestion {
 
     private static ControllerGestion INSTANCE = null;
 
-    private static OrdenDeCompraDAO ordenDeCompraDAO;
+    private static NotaDeCreditoDAO notaDeCreditoDAO;
+    private static NotaDeDebitoDAO notaDeDebitoDAO;
+
     private static ProveedorDAO proveedorDAO;
 
-    private static List<Proveedor> proveedor;
-
-    public static void setOrdenDeCompraDAO(OrdenDeCompraDAO ordenDeCompraDAO) {
-        ControllerGestion.ordenDeCompraDAO = ordenDeCompraDAO;
+    private ControllerGestion(ProveedorDAO proveedorDAO, NotaDeCreditoDAO notaDeCredito, NotaDeDebitoDAO notaDeDebito){
+        ControllerGestion.proveedorDAO = proveedorDAO;
+        notaDeCreditoDAO = notaDeCredito;
+        notaDeDebitoDAO = notaDeDebito;
     }
 
-    public void facturasPorDiaProveedor(int idProvedor){
-
-    };
-    private ControllerGestion(ProveedorDAO proveedorDAO, OrdenDeCompraDAO ordenDeCompraDAO){
-        this.proveedorDAO = proveedorDAO;
-        this.ordenDeCompraDAO = ordenDeCompraDAO;
-    }
     public static synchronized ControllerGestion getInstances() throws Exception {
         if(INSTANCE == null) {
             ProveedorDAO ProveedorDAO = new ProveedorDAO(Proveedor.class, getPathOutModel(Proveedor.class.getSimpleName()));
-            OrdenDeCompraDAO OrdenDeCompraDAO = new OrdenDeCompraDAO(OrdenDeCompra.class, getPathOutModel(OrdenDeCompra.class.getSimpleName()));
-            INSTANCE = new ControllerGestion(ProveedorDAO, OrdenDeCompraDAO);
+            NotaDeCreditoDAO notaDeCreditoDAO = new NotaDeCreditoDAO(NotaDeCredito.class, getPathOutModel(NotaDeCredito.class.getSimpleName()));
+            NotaDeDebitoDAO notaDeDebitoDAO = new NotaDeDebitoDAO(NotaDeDebito.class, getPathOutModel(NotaDeDebito.class.getSimpleName()));
+            INSTANCE = new ControllerGestion(ProveedorDAO, notaDeCreditoDAO, notaDeDebitoDAO);
         }
         return INSTANCE;
     }
 
+    private static String getPathOutModel(String name){
+        String dir = "programa\\src\\fixtures\\";
+        return  new File(dir+name+".json").getAbsolutePath();
+    }
+
     public CuentaCorrienteDTO obtenerCuentaCorrienteProveedores(int idProvedor) throws Exception{
-        List<OrdenDeCompra> ordenes = this.ordenDeCompraDAO.getAll(OrdenDeCompra.class);
-        Collection<LineaOrden> detalles = null;
-        for (OrdenDeCompra orden: ordenes) {
-            if (orden.getIdOrdenDeCompra().equals(idProvedor)){
-                detalles.addAll(orden.getDetalles());
-            }
-        }
+        List<NotaDeCredito> notasDeCredito = notaDeCreditoDAO.getAll(NotaDeCredito.class);
+        List<NotaDeDebito> notasDeDebito = notaDeDebitoDAO.getAll(NotaDeDebito.class);
+        Proveedor proveedor = proveedorDAO.search(idProvedor, Proveedor.class);
 
-        Double montoAcum = detalles.stream().mapToDouble(LineaOrden::getUltimoPrecioAcordado).sum();
-        String nombreProveedor = proveedorDAO.search(idProvedor).getNombre();
+        Double montoCredito = notasDeCredito.stream().filter(notaDeCredito -> notaDeCredito.getCuitProveedor().equals(proveedor.getCuit())).mapToDouble(NotaDeCredito::getMonto).sum();
+        Double montoDebito = notasDeDebito.stream().filter(notaDeDebito -> notaDeDebito.getCuitProveedor().equals(proveedor.getCuit())).mapToDouble(NotaDeDebito::getMonto).sum();
 
-        return  new CuentaCorrienteDTO(nombreProveedor, montoAcum);
+        return  new CuentaCorrienteDTO(proveedor.getNombre(), montoCredito-montoDebito);
     };
 
-    private static String getPathOutModel(String name){
-        String dir = "C:/IOO/";
-        return  new File(dir+name+".json").getPath();
-    }
+    public void facturasPorDiaProveedor(int idProvedor){
+
+    };
+
     public void consultarPrecioPorRubro(){};
 
     public void totalDeudaPorProveedor(){};

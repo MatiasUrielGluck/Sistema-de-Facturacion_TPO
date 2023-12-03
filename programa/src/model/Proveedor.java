@@ -7,6 +7,7 @@ enum TipoResponsabilidad{
 }
 
 public class Proveedor {
+    private int id;
     private String cuit;
     private TipoResponsabilidad responsabilidad;
     private String razonSocial;
@@ -16,8 +17,6 @@ public class Proveedor {
     private String mail;
     private double ingresosBrutos;
     private Date fechaInicioActividades;
-
-    private ProductoPorProveedor productoPorProveedor;
 
 
     public String getCuit() {

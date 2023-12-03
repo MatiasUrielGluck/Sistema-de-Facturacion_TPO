@@ -1,12 +1,12 @@
 package model;
 abstract class Documento {
     int id;
-    int cuit;
+    String cuit;
     Boolean estaPago;
     double monto;
 
 
-    public int getCuit() {
+    public String getCuit() {
         return cuit;
     }
 

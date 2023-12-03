@@ -1,7 +1,7 @@
 package model;
 public class ChequePropio extends Cheque{
     @Override
-    public int getCuit() {
+    public String getCuit() {
         return super.getCuit();
     }
 

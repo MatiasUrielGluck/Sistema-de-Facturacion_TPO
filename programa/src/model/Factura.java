@@ -10,7 +10,7 @@ public class Factura extends Documento {
     private Collection<DetalleFactura> detalles;
 
     @Override
-    public int getCuit() {
+    public String getCuit() {
         return super.getCuit();
     }
 
