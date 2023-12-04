@@ -72,25 +72,27 @@ public class ControllerGestion {
         return INSTANCE;
     }
 
-    public CuentaCorrienteDTO obtenerCuentaCorrienteProveedores(int idProvedor) throws Exception{
-        List<OrdenDeCompra> ordenes = this.ordenDeCompraDAO.getAll(OrdenDeCompra.class);
-        Collection<LineaOrden> detalles = null;
-        for (OrdenDeCompra orden: ordenes) {
-            if (orden.getIdOrdenDeCompra().equals(idProvedor)){
-                detalles.addAll(orden.getDetalles());
-            }
-        }
-
-        Double montoAcum = detalles.stream().mapToDouble(LineaOrden::getUltimoPrecioAcordado).sum();
-        String nombreProveedor = proveedorDAO.search(idProvedor).getNombre();
-
-        return  new CuentaCorrienteDTO(nombreProveedor, montoAcum);
-    };
 
     private static String getPathOutModel(String name){
         String dir = "C:/IOO/";
         return  new File(dir+name+".json").getPath();
     }
+
+    public CuentaCorrienteDTO obtenerCuentaCorrienteProveedores(int idProvedor) throws Exception{
+        Proveedor proveedor = proveedorDAO.search(idProvedor, Proveedor.class);
+        int cuitProveedor= proveedor.getCuit();
+        List<NotaDeCredito> notasDeCredito = notaDeCreditoDAO.getAll(NotaDeCredito.class).stream().filter(notaDeCredito -> notaDeCredito.getCuitProveedor() == cuitProveedor).toList();
+        List<NotaDeDebito> notasDeDebito = notaDeDebitoDAO.getAll(NotaDeDebito.class).stream().filter(notaDeDebito -> notaDeDebito.getCuitProveedor() == cuitProveedor).toList();
+        List<Factura> facturas = facturaDAO.getAll(Factura.class).stream().filter(factura -> factura.getCuitProveedor().equals(cuitProveedor)).toList();
+        Double montoCredito = notasDeCredito.stream().mapToDouble(NotaDeCredito::getMonto).sum();
+        Double montoDebito = notasDeDebito.stream().mapToDouble(NotaDeDebito::getMonto).sum();
+
+        return  new CuentaCorrienteDTO(proveedor.getNombre(), montoCredito-montoDebito, facturas, notasDeCredito, notasDeDebito);
+    };
+
+    public void facturasPorDiaProveedor(int idProvedor){
+
+    };
 
     public void consultarPrecioPorRubro(){};
 

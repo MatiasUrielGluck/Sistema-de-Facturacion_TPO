@@ -1,21 +1,50 @@
 package model;
 public class NotaDeDebito extends Documento{
-    public NotaDeDebito(int id, int cuit, boolean estaPago, double monto) {
+    int cuitProveedor;
+
+    public NotaDeDebito(int id, int cuit, boolean estaPago, double monto, int cuitProveedor) {
         this.id = id;
         this.cuit = cuit;
         this.estaPago = estaPago;
         this.monto = monto;
+        this.cuitProveedor = cuitProveedor;
     }
     @Override
     public int getCuit() {
         return super.getCuit();
     }
+
     @Override
     public Boolean getEstaPago() {
         return super.getEstaPago();
     }
+
     @Override
     public double getMonto() {
         return super.getMonto();
+    }
+
+    public int getId() {
+        return super.getCuit();
+    }
+
+    public int getCuitProveedor() {
+        return this.cuitProveedor;
+    }
+
+    public void setMonto(double monto) {
+        this.monto = monto;
+    }
+    public void setId(int id) {
+        this.id = id;
+    }
+    public void setCuit(int cuit) {
+        this.cuit = cuit;
+    }
+    public void setEstaPago(boolean estaPago) {
+        this.estaPago = estaPago;
+    }
+    public void setCuitProveedor(int cuitProveedor) {
+        this.cuitProveedor = cuitProveedor;
     }
 }

@@ -1,0 +1,7 @@
+{"id":"1","cuit":"12345","estaPago":true,"monto":12039,"cuitProveedor":"123444"}
+{"id":"2","cuit":"12345","estaPago":false,"monto":15000,"cuitProveedor":"35521"}
+{"id":"3","cuit":"12345","estaPago":false,"monto":20000.5,"cuitProveedor":"123444"}
+{"id":"4","cuit":"12345","estaPago":false,"monto":80000,"cuitProveedor":"934058"}
+{"id":"5","cuit":"12345","estaPago":false,"monto":40390,"cuitProveedor":"123444"}
+{"id":"6","cuit":"12345","estaPago":false,"monto":30000.5,"cuitProveedor":"934058"}
+{"id":"7","cuit":"12345","estaPago":true,"monto":100000,"cuitProveedor":"934058"}

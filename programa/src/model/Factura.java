@@ -9,6 +9,8 @@ public class Factura extends Documento {
     private Date fecha;
     private Collection<DetalleFactura> detalles;
 
+    private String cuitProveedor;
+
     @Override
     public int getCuit() {
         return super.getCuit();
@@ -34,6 +36,10 @@ public class Factura extends Documento {
 
     public Date getFecha() {
         return fecha;
+    }
+
+    public String getCuitProveedor() {
+        return cuitProveedor;
     }
 
     public void getOrdenDeCompraById(){

@@ -22,7 +22,7 @@ public class Controller {
     public static synchronized Controller getInstances() throws Exception {
         if(INSTANCE == null) {
             INSTANCE = new Controller(initModel());
-            //modelDao = new ModelDao(Model.class,getPathOutModel(Model.class.getSimpleName()));
+            modelDao = new ModelDao(Model.class,getPathOutModel(Model.class.getSimpleName()));
         }
         return INSTANCE;
     }
