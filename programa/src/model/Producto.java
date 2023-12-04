@@ -1,10 +1,7 @@
 package model;
-enum TipoRubro{
-    MEDICINA_PREPAGA, VIATICOS_MOVILIDAD, MANTENIMINETO_MUEBLES, LIBRERIA, PAPELERIA_IMPRESIONES, PRODUCTOS_REVENTA
-}
-enum TipoUnidad{
-    UNIDAD, PESO, HORA
-}
+
+import enums.TipoRubro;
+import enums.TipoUnidad;
 
 public class Producto {
     private int idProducto;

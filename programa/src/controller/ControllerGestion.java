@@ -3,9 +3,12 @@ package controller;
 import dao.*;
 import edu.Impuesto;
 import model.*;
+import dao.ProveedorDAO;
+import dto.OrdenDePagoDTO;
 import dto.CuentaCorrienteDTO;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
@@ -20,6 +23,9 @@ public class ControllerGestion {
     private static ChequePropioDAO chequePropioDAO;
     private static ChequeTerceroDAO chequeTerceroDAO;
     private static OrdenDeCompraDAO ordenDeCompraDAO;
+
+    private static OrdenDePagoDAO ordenDePagoDAO;
+
     private static ProveedorDAO proveedorDAO;
 
     private static List<Proveedor> proveedor;
@@ -28,7 +34,7 @@ public class ControllerGestion {
         ControllerGestion.ordenDeCompraDAO = ordenDeCompraDAO;
     }
 
-    private ControllerGestion(FacturaDAO facturaDAO, ProveedorDAO proveedorDAO, OrdenDeCompraDAO ordenDeCompraDAO, NotaDeCreditoDAO notaDeCreditoDAO, NotaDeDebitoDAO notaDeDebitoDAO, ChequePropioDAO chequePropioDAO, ChequeTerceroDAO chequeTerceroDAO) {
+    private ControllerGestion(FacturaDAO facturaDAO, ProveedorDAO proveedorDAO, OrdenDeCompraDAO ordenDeCompraDAO, NotaDeCreditoDAO notaDeCreditoDAO, NotaDeDebitoDAO notaDeDebitoDAO, ChequePropioDAO chequePropioDAO, ChequeTerceroDAO chequeTerceroDAO, OrdenDePagoDAO ordenDePagoDAO) {
         this.facturaDAO = facturaDAO;
         this.proveedorDAO = proveedorDAO;
         this.ordenDeCompraDAO = ordenDeCompraDAO;
@@ -36,9 +42,11 @@ public class ControllerGestion {
         this.notaDeDebitoDAO = notaDeDebitoDAO;
         this.chequePropioDAO = chequePropioDAO;
         this.chequeTerceroDAO = chequeTerceroDAO;
+        this.ordenDePagoDAO = ordenDePagoDAO;
     }
 
-    public double facturasPorDiaProveedor(int idProvedor, Date fecha){
+
+    public double facturasPorDiaProveedor(int idProvedor, Date fecha) throws Exception {
         List<Factura> facturas = this.facturaDAO.getAll(Factura.class);
         double montoTotal = 0;
         for (Factura factura: facturas) {
@@ -48,7 +56,7 @@ public class ControllerGestion {
         }
         return montoTotal;
     };
-    
+
     public static synchronized ControllerGestion getInstances() throws Exception {
         if(INSTANCE == null) {
             FacturaDAO FacturaDAO = new FacturaDAO(Factura.class, getPathOutModel(Factura.class.getSimpleName()));
@@ -58,7 +66,8 @@ public class ControllerGestion {
             NotaDeDebitoDAO NotaDeDebitoDAO = new NotaDeDebitoDAO(NotaDeDebito.class, getPathOutModel(NotaDeDebito.class.getSimpleName()));
             ChequeTerceroDAO ChequeTerceroDAO = new ChequeTerceroDAO(ChequeTerceros.class, getPathOutModel(ChequeTerceros.class.getSimpleName()));
             ChequePropioDAO ChequePropioDAO = new ChequePropioDAO(ChequePropio.class, getPathOutModel(ChequePropio.class.getSimpleName()));
-            INSTANCE = new ControllerGestion(FacturaDAO, ProveedorDAO, OrdenDeCompraDAO, NotaDeCreditoDAO, notaDeDebitoDAO, chequePropioDAO, chequeTerceroDAO);
+            OrdenDePagoDAO OrdenDePagoDAO = new OrdenDePagoDAO(OrdenDePago.class, getPathOutModel(OrdenDePago.class.getSimpleName()));
+            INSTANCE = new ControllerGestion(FacturaDAO, ProveedorDAO, OrdenDeCompraDAO, NotaDeCreditoDAO, NotaDeDebitoDAO, ChequePropioDAO, ChequeTerceroDAO, OrdenDePagoDAO);
         }
         return INSTANCE;
     }
@@ -82,11 +91,12 @@ public class ControllerGestion {
         String dir = "C:/IOO/";
         return  new File(dir+name+".json").getPath();
     }
+
     public void consultarPrecioPorRubro(){};
 
     public void totalDeudaPorProveedor(){};
 
-    public double obtenerDeudaPorProveedor(int cuit) {
+    public double obtenerDeudaPorProveedor(int cuit) throws Exception {
         List<Factura> facturas = this.facturaDAO.getAll(Factura.class);
         List<NotaDeCredito> notasDeCredito = this.notaDeCreditoDAO.getAll(NotaDeCredito.class);
         List<NotaDeDebito> notasDeDebito = this.notaDeDebitoDAO.getAll(NotaDeDebito.class);
@@ -96,12 +106,12 @@ public class ControllerGestion {
         return proveedorDAO.search(cuit).getDocumentosDeudaProveedor(facturas, notasDeCredito, notasDeDebito, chequesPropio, chequesTerceros);
     };
 
-    public double obtenerImpuestosRetenidos(int cuit) {
+    public double obtenerImpuestosRetenidos(int cuit) throws Exception {
         List<Factura> facturas = this.facturaDAO.getAll(Factura.class);
         double impuestosRetenidos = 0;
         for (Factura factura: facturas) {
             if (factura.getCuit() != cuit) continue;
-            
+
             Collection<Impuesto> impuestos = factura.getImpuestos();
             for (Impuesto impuesto: impuestos) {
                 impuestosRetenidos += factura.getMonto() * impuesto.getPercentage();
@@ -112,5 +122,13 @@ public class ControllerGestion {
 
     public void consultaLibroIva(){};
 
-
+    public List<OrdenDePagoDTO> obtenerOrdenesDePago() throws Exception {
+        List<OrdenDePagoDTO> resultado = new ArrayList<OrdenDePagoDTO>();
+        List<OrdenDePago> ordenesDePago = this.ordenDePagoDAO.getAll(OrdenDePago.class);
+        for (OrdenDePago ordenDePago : ordenesDePago){
+            OrdenDePagoDTO ordenDePagoDTO = new OrdenDePagoDTO(ordenDePago);
+            resultado.add(ordenDePagoDTO);
+        }
+        return resultado;
+    }
 }
