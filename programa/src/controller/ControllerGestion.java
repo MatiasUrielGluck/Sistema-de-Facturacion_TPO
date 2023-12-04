@@ -1,11 +1,8 @@
 package controller;
 
-import dao.NotaDeCreditoDAO;
-import dao.NotaDeDebitoDAO;
-import dao.OrdenDeCompraDAO;
-import dao.ProveedorDAO;
+import dao.*;
 import model.*;
-import dto.CuentaCorrienteDTO;
+import dto.*;
 
 import java.io.File;
 import java.util.Collection;
@@ -18,12 +15,17 @@ public class ControllerGestion {
     private static NotaDeCreditoDAO notaDeCreditoDAO;
     private static NotaDeDebitoDAO notaDeDebitoDAO;
 
+    private static OrdenDePagoDAO ordenDePagoDAO;
+    private static FacturaDAO facturaDAO;
+
     private static ProveedorDAO proveedorDAO;
 
-    private ControllerGestion(ProveedorDAO proveedorDAO, NotaDeCreditoDAO notaDeCredito, NotaDeDebitoDAO notaDeDebito){
-        ControllerGestion.proveedorDAO = proveedorDAO;
+    private ControllerGestion(ProveedorDAO proveedor, NotaDeCreditoDAO notaDeCredito, NotaDeDebitoDAO notaDeDebito, OrdenDePagoDAO ordenDePago, FacturaDAO factura){
+        proveedorDAO = proveedor;
         notaDeCreditoDAO = notaDeCredito;
         notaDeDebitoDAO = notaDeDebito;
+        ordenDePagoDAO = ordenDePago;
+        facturaDAO = factura;
     }
 
     public static synchronized ControllerGestion getInstances() throws Exception {
@@ -31,7 +33,9 @@ public class ControllerGestion {
             ProveedorDAO ProveedorDAO = new ProveedorDAO(Proveedor.class, getPathOutModel(Proveedor.class.getSimpleName()));
             NotaDeCreditoDAO notaDeCreditoDAO = new NotaDeCreditoDAO(NotaDeCredito.class, getPathOutModel(NotaDeCredito.class.getSimpleName()));
             NotaDeDebitoDAO notaDeDebitoDAO = new NotaDeDebitoDAO(NotaDeDebito.class, getPathOutModel(NotaDeDebito.class.getSimpleName()));
-            INSTANCE = new ControllerGestion(ProveedorDAO, notaDeCreditoDAO, notaDeDebitoDAO);
+            OrdenDePagoDAO ordenDePagoDAO = new OrdenDePagoDAO(OrdenDePago.class, getPathOutModel(OrdenDePago.class.getSimpleName()));
+            FacturaDAO facturaDAO = new FacturaDAO(Factura.class, getPathOutModel(Factura.class.getSimpleName()));
+            INSTANCE = new ControllerGestion(ProveedorDAO, notaDeCreditoDAO, notaDeDebitoDAO, ordenDePagoDAO, facturaDAO);
         }
         return INSTANCE;
     }
@@ -42,14 +46,15 @@ public class ControllerGestion {
     }
 
     public CuentaCorrienteDTO obtenerCuentaCorrienteProveedores(int idProvedor) throws Exception{
-        List<NotaDeCredito> notasDeCredito = notaDeCreditoDAO.getAll(NotaDeCredito.class);
-        List<NotaDeDebito> notasDeDebito = notaDeDebitoDAO.getAll(NotaDeDebito.class);
         Proveedor proveedor = proveedorDAO.search(idProvedor, Proveedor.class);
+        String cuitProveedor= proveedor.getCuit();
+        List<NotaDeCredito> notasDeCredito = notaDeCreditoDAO.getAll(NotaDeCredito.class).stream().filter(notaDeCredito -> notaDeCredito.getCuitProveedor().equals(cuitProveedor)).toList();
+        List<NotaDeDebito> notasDeDebito = notaDeDebitoDAO.getAll(NotaDeDebito.class).stream().filter(notaDeDebito -> notaDeDebito.getCuitProveedor().equals(cuitProveedor)).toList();
+        List<Factura> facturas = facturaDAO.getAll(Factura.class).stream().filter(factura -> factura.getCuitProveedor().equals(cuitProveedor)).toList();
+        Double montoCredito = notasDeCredito.stream().mapToDouble(NotaDeCredito::getMonto).sum();
+        Double montoDebito = notasDeDebito.stream().mapToDouble(NotaDeDebito::getMonto).sum();
 
-        Double montoCredito = notasDeCredito.stream().filter(notaDeCredito -> notaDeCredito.getCuitProveedor().equals(proveedor.getCuit())).mapToDouble(NotaDeCredito::getMonto).sum();
-        Double montoDebito = notasDeDebito.stream().filter(notaDeDebito -> notaDeDebito.getCuitProveedor().equals(proveedor.getCuit())).mapToDouble(NotaDeDebito::getMonto).sum();
-
-        return  new CuentaCorrienteDTO(proveedor.getNombre(), montoCredito-montoDebito);
+        return  new CuentaCorrienteDTO(proveedor.getNombre(), montoCredito-montoDebito, facturas, notasDeCredito, notasDeDebito);
     };
 
     public void facturasPorDiaProveedor(int idProvedor){
@@ -60,7 +65,9 @@ public class ControllerGestion {
 
     public void totalDeudaPorProveedor(){};
 
-    public void obtenerDeudaPorProveedor(){};
+    public void obtenerDeudaPorProveedor(){
+
+    };
 
     public void obtenerImpuestosRetenidos(){};
 

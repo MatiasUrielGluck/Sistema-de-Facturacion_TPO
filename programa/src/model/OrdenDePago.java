@@ -10,6 +10,8 @@ public class OrdenDePago {
     private FormaPago formaPago;
     private double totalRetenciones;
 
+    private String cuitProveedor;
+
     public void getDocumentosAsociados(){};
 
     public int getIdOrdenDePago() {
@@ -23,4 +25,6 @@ public class OrdenDePago {
     public double getTotalRetenciones() {
         return totalRetenciones;
     }
+
+    public String getCuitProveedor() { return cuitProveedor; }
 }

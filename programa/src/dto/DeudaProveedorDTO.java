@@ -1,28 +1,13 @@
 package dto;
 
-import model.*;
-
-import java.util.List;
-
-public class CuentaCorrienteDTO {
-
+public class DeudaProveedorDTO {
     private String nombreProveedor;
 
     private Double montoDeuda;
 
-    private List<Factura> facturas;
-    private List<NotaDeCredito> notasDeCredito;
-
-    private List<NotaDeDebito> notasDeDebito;
-
-
-
-    public CuentaCorrienteDTO(String nombreProveedor, Double montoDeuda, List<Factura> facturas, List<NotaDeCredito> notasDeCredito, List<NotaDeDebito> notasDeDebito) {
+    public DeudaProveedorDTO(String nombreProveedor, Double montoDeuda) {
         this.nombreProveedor = nombreProveedor;
         this.montoDeuda = montoDeuda;
-        this.facturas = facturas;
-        this.notasDeCredito = notasDeCredito;
-        this.notasDeDebito = notasDeDebito;
     }
 
     public String nombreProveedor() {
@@ -40,5 +25,4 @@ public class CuentaCorrienteDTO {
     public void setMontoDeuda(Double montoDeuda) {
         this.montoDeuda = montoDeuda;
     }
-
 }
