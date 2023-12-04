@@ -1,0 +1,74 @@
+[
+  {
+    "impuesto": {
+      "tipo": "IVA"
+    },
+    "fecha": "2023-01-15",
+    "detalles": "Compra de productos de oficina"
+  },
+  {
+    "impuesto": {
+      "tipo": "Ganancia"
+    },
+    "fecha": "2023-02-28",
+    "detalles": "Servicios de consultoría"
+  },
+  {
+    "impuesto": {
+      "tipo": "IVA"
+    },
+    "fecha": "2023-03-10",
+    "detalles": "Venta de artículos de tecnología"
+  },
+  {
+    "impuesto": {
+      "tipo": "Ganancia"
+    },
+    "fecha": "2023-04-05",
+    "detalles": "Trabajos de diseño gráfico"
+  },
+  {
+    "impuesto": {
+      "tipo": "IVA"
+    },
+    "fecha": "2023-05-20",
+    "detalles": "Adquisición de mobiliario de oficina"
+  },
+  {
+    "impuesto": {
+      "tipo": "Ganancia"
+    },
+    "fecha": "2023-06-12",
+    "detalles": "Desarrollo de software a medida"
+  },
+  {
+    "impuesto": {
+      "tipo": "IVA"
+    },
+    "fecha": "2023-07-03",
+    "detalles": "Compra de materiales de construcción"
+  },
+  {
+    "impuesto": {
+      "tipo": "Ganancia"
+    },
+    "fecha": "2023-08-18",
+    "detalles": "Servicios de marketing digital"
+  },
+  {
+    "impuesto": {
+      "tipo": "IVA"
+    },
+    "fecha": "2023-09-22",
+    "detalles": "Venta de productos alimenticios"
+  },
+  {
+    "impuesto": {
+      "tipo": "Ganancia"
+    },
+    "fecha": "2023-10-30",
+    "detalles": "Consultoría financiera"
+  }
+]
+
+
