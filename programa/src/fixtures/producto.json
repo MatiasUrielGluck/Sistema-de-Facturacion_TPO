@@ -1,90 +1,12 @@
-[
-  {
-    "idProducto": 1,
-    "nombreProducto": "Traslado menos 15km",
-    "rubro": "VIATICOS_MOVILIDAD",
-    "tipoUnidad": "UNIDAD",
-    "tipoIva": 0.105
-  },
-  {
-    "idProducto": 2,
-    "nombreProducto": "Traslado mas 15km",
-    "rubro": "VIATICOS_MOVILIDAD",
-    "tipoUnidad": "UNIDAD",
-    "tipoIva": 0.05
-  },
-  {
-    "idProducto": 3,
-    "nombreProducto": "Reparacion mueble madera chico",
-    "rubro": "MANTENIMINETO_MUEBLES",
-    "tipoUnidad": "UNIDAD",
-    "tipoIva": 0.27
-  },
-  {
-    "idProducto": 4,
-    "nombreProducto": "Reparacion mueble madera mediano",
-    "rubro": "MANTENIMINETO_MUEBLES",
-    "tipoUnidad": "UNIDAD",
-    "tipoIva": 0.21
-  },
-  {
-    "idProducto": 5,
-    "nombreProducto": "Vasos descartables",
-    "rubro": "PAPELERIA_IMPRESIONES",
-    "tipoUnidad": "UNIDAD",
-    "tipoIva": 0.105
-  },
-  {
-    "idProducto": 6,
-    "nombreProducto": "Cajas papel",
-    "rubro": "PAPELERIA_IMPRESIONES",
-    "tipoUnidad": "UNIDAD",
-    "tipoIva": 0.27
-  },
-  {
-    "idProducto": 7,
-    "nombreProducto": "Paracetamol",
-    "rubro": "MEDICINA_PREPAGA",
-    "tipoUnidad": "UNIDAD",
-    "tipoIva": 0.025
-  },
-  {
-    "idProducto": 8,
-    "nombreProducto": "Ibuprofeno",
-    "rubro": "MEDICINA_PREPAGA",
-    "tipoUnidad": "UNIDAD",
-    "tipoIva": 0.025
-  },
-
-  {
-    "idProducto": 9,
-    "nombreProducto": "Televisor 32 pulgadas",
-    "rubro": "PRODUCTOS_REVENTA",
-    "tipoUnidad": "UNIDAD",
-    "tipoIva": 0.21
-  },
-
-  {
-    "idProducto": 10,
-    "nombreProducto": "Microondas",
-    "rubro": "PRODUCTOS_REVENTA",
-    "tipoUnidad": "UNIDAD",
-    "tipoIva": 0.21
-  },
-
-  {
-    "idProducto": 11,
-    "nombreProducto": "Cuadernillos universitarios",
-    "rubro": "LIBRERIA",
-    "tipoUnidad": "UNIDAD",
-    "tipoIva": 0.21
-  },
-
-  {
-    "idProducto": 12,
-    "nombreProducto": "Cuadernillos escolares",
-    "rubro": "LIBRERIA",
-    "tipoUnidad": "UNIDAD",
-    "tipoIva": 0.21
-  }
-]
+{"idProducto":1,"nombreProducto":"Traslado menos 15km","rubro":"VIATICOS_MOVILIDAD","tipoUnidad":"UNIDAD","tipoIva":0.105}
+{"idProducto":2,"nombreProducto":"Traslado mas 15km","rubro":"VIATICOS_MOVILIDAD","tipoUnidad":"UNIDAD","tipoIva":0.05}
+{"idProducto":3,"nombreProducto":"Reparacion mueble madera chico","rubro":"MANTENIMINETO_MUEBLES","tipoUnidad":"UNIDAD","tipoIva":0.27}
+{"idProducto":4,"nombreProducto":"Reparacion mueble madera mediano","rubro":"MANTENIMINETO_MUEBLES","tipoUnidad":"UNIDAD","tipoIva":0.21}
+{"idProducto":5,"nombreProducto":"Vasos descartables","rubro":"PAPELERIA_IMPRESIONES","tipoUnidad":"UNIDAD","tipoIva":0.105}
+{"idProducto":6,"nombreProducto":"Cajas papel","rubro":"PAPELERIA_IMPRESIONES","tipoUnidad":"UNIDAD","tipoIva":0.27}
+{"idProducto":7,"nombreProducto":"Paracetamol","rubro":"MEDICINA_PREPAGA","tipoUnidad":"UNIDAD","tipoIva":0.025}
+{"idProducto":8,"nombreProducto":"Ibuprofeno","rubro":"MEDICINA_PREPAGA","tipoUnidad":"UNIDAD","tipoIva":0.025}
+{"idProducto":9,"nombreProducto":"Televisor 32 pulgadas","rubro":"PRODUCTOS_REVENTA","tipoUnidad":"UNIDAD","tipoIva":0.21}
+{"idProducto":10,"nombreProducto":"Microondas","rubro":"PRODUCTOS_REVENTA","tipoUnidad":"UNIDAD","tipoIva":0.21}
+{"idProducto":11,"nombreProducto":"Cuadernillos universitarios","rubro":"LIBRERIA","tipoUnidad":"UNIDAD","tipoIva":0.21}
+{"idProducto":12,"nombreProducto":"Cuadernillos escolares","rubro":"LIBRERIA","tipoUnidad":"UNIDAD","tipoIva":0.21}
